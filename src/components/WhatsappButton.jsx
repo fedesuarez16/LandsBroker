@@ -1,45 +1,69 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BsChevronDown } from 'react-icons/bs';
-import { wsp } from '../assets'; // Asegúrate de que la ruta de la imagen de WhatsApp sea correcta.
+import { wsp } from "../assets";
 
-const sections = [
-  'hero', 'nosotros', 'info', 'premisas', 'management', 'features', 'lineas', 'negocios', 'entretenimiento', 'frase', 'alianzass', 'contacto',
-];
+const ScrollAndWhatsAppButton = () => {
+  const sections = [
+    '#hero', '#pricing', '#info', '#premisas', '#infoTwo', 
+    '#management', '#lineas', '#negocios', '#entretenimiento', '#subtitles', 
+    '#alianzass', '#contact', '#workWithUs', '#data', '#footer'
+  ];
+  const [currentSection, setCurrentSection] = useState(0);
 
-const NavigationButton = () => {
-  const handleNavigation = () => {
-    const currentScrollPosition = window.scrollY;
-    const windowHeight = window.innerHeight;
-    let nextSection = null;
-
-    for (let section of sections) {
-      const element = document.getElementById(section);
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sections.findIndex((section) => section.substring(1) === entry.target.id);
+            console.log(`Sección visible: ${entry.target.id}, Índice: ${index}`);
+            if (index !== -1) {
+              setCurrentSection(index);
+            }
+          }
+        });
+      },
+      { threshold: 0.1 } // Ajuste del umbral de visibilidad
+    );
+  
+    sections.forEach((section) => {
+      const element = document.querySelector(section);
       if (element) {
-        const elementTop = element.getBoundingClientRect().top + window.scrollY;
-        if (elementTop > currentScrollPosition + windowHeight / 2) {
-          nextSection = element;
-          break;
-        }
+        console.log(`Observando: ${section}`);
+        observer.observe(element);
       }
-    }
+    });
+  
+    return () => {
+      sections.forEach((section) => {
+        const element = document.querySelector(section);
+        if (element) observer.unobserve(element);
+      });
+    };
+  }, [sections]);
+   
 
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      document.getElementById(sections[0]).scrollIntoView({ behavior: 'smooth' });
+  const handleScroll = () => {
+    const nextSection = (currentSection + 1) % sections.length;
+    const element = document.querySelector(sections[nextSection]);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start' // Alinea el elemento al inicio de la ventana de visualización
+      });
     }
   };
 
   return (
     <div className="fixed z-50 right-0 bottom-0 flex flex-col items-center m-4 space-y-2">
-      <button
-        onClick={handleNavigation}
-        className="p-4 bg-blue-600 rounded-full text-white cursor-pointer flex items-center justify-center"
+      <div
+        onClick={handleScroll}
+        className="p-4 bg-white rounded-full text-gray-400 opacity-75 cursor-pointer flex items-center justify-center"
       >
         <BsChevronDown size={20} />
-      </button>
+      </div>
       <a
-        href="https://wa.me/YOUR_PHONE_NUMBER" // Reemplaza con tu número de teléfono en formato internacional.
+        href="https://wa.me/541170985000"
         target="_blank"
         rel="noopener noreferrer"
         className="p-4 bg-green-500 rounded-full text-white cursor-pointer flex items-center justify-center"
@@ -50,4 +74,4 @@ const NavigationButton = () => {
   );
 };
 
-export default NavigationButton;
+export default ScrollAndWhatsAppButton;

@@ -31,7 +31,6 @@ const App = () => {
       <div id="collaboration"><Collaboration /></div>
       <div id="info-two"><InfoTwo /></div>
       <div id="roadmap"><Roadmap /></div>
-
       <div ><Benefits/></div>
       <div ><Subtitles /></div>
       <Alianzas/>

@@ -3,7 +3,7 @@ import { casa } from "../assets";
 
 const PersonalLines = () => {
   return (
-    <div id="lineas" className="block mx-auto relative t p-0.5 bg-no-repeat bg-[length:100%_100%]">
+    <div className="block mx-auto relative t p-0.5 bg-no-repeat bg-[length:100%_100%]">
       <div className="relative z-2 flex flex-col min-h-[22rem] lg:items-center p-[2.4rem]">
         <h5 className="h5 lg:text-5xl mx-auto lg:w-[440px] mb-14 lg:mb-10 py-2 px-2 text-white bg-verde">Líneas personales</h5>
         <div className="flex justify-center items-center mb-14">
