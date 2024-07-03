@@ -158,7 +158,7 @@ const Benefits = () => {
                   <p className="body-2 font-semibold text-brown">· Accidentes Personales Deportistas </p>
                 </div>
                 <div className="flex items-center">
-                  <p className="body-2 font-semibold text-brown">· Deportes <span className="font-thin hidden lg:inline">(Golf, aventura, deporteS de riesgo)</span></p>
+                  <p className="body-2 font-semibold text-brown">· Deportes <span className="font-thin hidden lg:inline">(Golf, aventura, deportes de riesgo)</span></p>
                 </div>
                 <div className="flex items-center">
                   <p className="body-2 font-semibold text-brown">· Responsabilidad Civil - Eventos y Ferias <span className="font-thin hidden lg:inline">(Clubes, Asociaciones, etc)</span></p>
@@ -177,7 +177,7 @@ const Benefits = () => {
               }}
               className="flex bg-bordo cursor-pointer lg:mr-[26rem] w-32 py-3 px-6 rounded-md items-center mt-2"
             >
-              <p id="frase" className="font-code text-[15px] font-semibold text-white tracking-wider">Llámanos</p>
+              <p id="frase" className="font-code text-[15px] font-semibold text-white tracking-wider">Llamanos</p>
             </div>
 
 
