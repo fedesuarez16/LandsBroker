@@ -158,13 +158,13 @@ const Benefits = () => {
                   <p className="body-2 font-semibold text-brown">· Accidentes Personales Deportistas </p>
                 </div>
                 <div className="flex items-center">
-                  <p className="body-2 font-semibold text-brown">· Deportes <span className="font-thin hidden lg:inline">(Golf, aventura, deporte de riesgo)</span></p>
+                  <p className="body-2 font-semibold text-brown">· Deportes <span className="font-thin hidden lg:inline">(Golf, aventura, deporteS de riesgo)</span></p>
                 </div>
                 <div className="flex items-center">
-                  <p className="body-2 font-semibold text-brown">· Responsabilidad Civil - Eventos y Ferias <span className="font-thin hidden lg:inline">(Clubes, Asociaciones etc)</span></p>
+                  <p className="body-2 font-semibold text-brown">· Responsabilidad Civil - Eventos y Ferias <span className="font-thin hidden lg:inline">(Clubes, Asociaciones, etc)</span></p>
                 </div>
                 <div className="flex items-center">
-                  <p className="body-2 font-semibold text-brown">· Seguros de espectáculos <span className="font-thin hidden lg:inline">(seguros para participantes u organizadores)</span></p>
+                  <p className="body-2 font-semibold text-brown">· Seguros de espectáculos <span className="font-thin hidden lg:inline">(SEGUROS para participantes u organizadores)</span></p>
                 </div>
                 <div className="flex items-center">
                   <p className="body-2 font-semibold text-brown">· Obras de arte y Objetos de Valor</p>

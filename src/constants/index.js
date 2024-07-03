@@ -162,11 +162,11 @@ export const collabContent = [
   },
   {
     id: "1",
-    title: "Más de 15 Compañías Líderes de Mercado",
+    title: "Más de 15 Compañías Líderes del Mercado",
   },
   {
     id: "2",
-    title: "1000 Empresas confían en nosotros",
+    title: "1.000 Empresas confían en nosotros",
   },
 ];
 
